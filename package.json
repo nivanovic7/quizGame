@@ -1,0 +1,31 @@
+{
+  "name": "quizgame",
+  "version": "1.0.0",
+  "description": "Simple quiz game ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nivanovic7/quizGame.git"
+  },
+  "keywords": [
+    "quiz",
+    "math",
+    "logic",
+    "trivia"
+  ],
+  "author": "Nikola Ivanovic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nivanovic7/quizGame/issues"
+  },
+  "homepage": "https://github.com/nivanovic7/quizGame#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^5.1.0",
+    "mongoose": "^6.10.0",
+    "nodemon": "^2.0.20"
+  }
+}
