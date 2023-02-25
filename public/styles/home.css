@@ -1,0 +1,43 @@
+.welcome-header{
+    padding: 3rem 2rem;
+    border: 1px solid white;
+    margin: 4rem;
+    font-family: 'Tilt Prism', cursive;
+    line-height: 2em;
+}
+
+.welcome-header h1{
+    font-size: 3rem;
+}
+
+.play-btn{
+    display: block;
+    margin: auto;
+    padding: 1rem 3rem;
+    border-radius: 100vw;
+    width: fit-content;
+    font-family: monospace  ;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

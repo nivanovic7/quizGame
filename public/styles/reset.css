@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Tilt+Prism&display=swap');
 *, *::before, *::after {
     box-sizing: border-box;
   }
@@ -14,6 +14,8 @@
   body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    background-color: black;
+    color: whitesmoke;
   }
 
   img, picture, video, canvas, svg {
@@ -32,3 +34,4 @@
   #root, #__next {
     isolation: isolate;
   }
+
