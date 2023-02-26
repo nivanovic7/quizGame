@@ -52,10 +52,17 @@ button{
     border: 0;
     font-size: small;
     border-radius: 2px;
+    cursor: pointer;
 }
 
 a,p{
     color: rgba(255, 255, 255, 0.534);
+}
+
+.error-message{
+    color: rgb(5, 5, 5);
+    font-size: small;
+    margin-top: -1rem;
 }
 
 @keyframes gradient {

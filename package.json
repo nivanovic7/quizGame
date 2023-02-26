@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/nivanovic7/quizGame#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "express": "^4.18.2",
     "mongodb": "^5.1.0",
     "mongoose": "^6.10.0",

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1"	, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/form.css">
+    <script defer src="./js/form.js"></script>
+</head>
+<body>
+  <h2>Napravi novi nalog</h2>
+  <form class="login-form">
+    <label for="username">Korisnicko ime</label>
+    <input type="text" id="username" name="username" placeholder="Unesi ime..." required>
+    <p class="error-message username-error"></p>
+
+    <label for="password">Lozinka</label>
+    <input type="password" id="password" name="password" placeholder="Unesi lozinku..." required>
+
+    <label for="confirm-password">Potvrdi lozinku</label>
+    <input type="password" id="confirm-password" name="confirmPassword" placeholder="Unesi lozinku..." required>
+    <p class="error-message password-error"></p>
+
+    <button>Potvrdi</button>
+</form>
+<p>Imas racun? <a href="/login">Prijavi se.</a></p>
+
+</body>
+</html>
