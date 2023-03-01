@@ -4,6 +4,7 @@ const passwordError = document.querySelector(".password-error")
 
 form.addEventListener("submit",async function(e){
     e.preventDefault();
+    console.log("Hello")
     const formData = new FormData(form);
     const userData = {};
     const fetchLocation = document.title.toLocaleLowerCase();
@@ -22,6 +23,9 @@ form.addEventListener("submit",async function(e){
         console.log(res)
         if(res.url){
             location.assign(`http://localhost:3000/${res.url}`) 
+        }
+        if(res.user){
+            console.log(res.user)
         }
         if(res.errors){
             console.log(res.errors)

@@ -2,7 +2,10 @@ const express = require('express')
 const mongoose = require("mongoose")
 const app = express();
 const authRoutes = require("./server/routes/authRoutes.js")
+const cookieParser = require("cookie-parser")
 
+app.set('view engine', 'ejs');
+app.use(cookieParser())
 app.use(express.static("public"));
 app.use(express.json());
 

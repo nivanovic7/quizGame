@@ -20,5 +20,17 @@ userSchema.pre("save", async function(next){
     this.password = await bcrypt.hash(this.password, salt)
 })
 
+userSchema.statics.login = async function(username, password){
+    const user = await this.findOne({username})
+    if(user){
+        const auth = await bcrypt.compare(password, user.password)
+        if(auth){
+            return user
+        }
+        throw new Error("Unesite ispavnu lozinku")
+    }
+    throw new Error("Unesite ispravno korisnicko ime")
+}
+
 const User = mongoose.model("user", userSchema)
 module.exports = User;
