@@ -1,9 +1,13 @@
 <header>
-    <ul>
+    <ul class="nav-list">
         <% if(user){ %>
-        <li><a href="#">Ima</a></li>
+        <li class="nav-item nav-username"><a class="nav-link " href="#"><%=user.username %></a></li>
+        <li class="nav-item"><a class="nav-link" href="/#">rankings</a></li>
+
+        <li class="nav-item"><a class="nav-link" href="/logout">logout</a></li>
         <% } else{ %>
-            <li><a href="#">Nema</a></li>
+            <li class="nav-item"><a class="nav-link" href="/signup">signup</a></li>
+            <li class="nav-item"><a class="nav-link" href="/login">login</a></li>
         <% } %>
     </ul>
 </header>

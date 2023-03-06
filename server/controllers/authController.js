@@ -37,6 +37,7 @@ const createToken = function(id){
     return jwt.sign({id}, "quiz secret", {expiresIn: maxAge})
 }
 
+
 module.exports.home_get = (req, res) => {
     res.render("home")
 }
@@ -46,16 +47,23 @@ module.exports.game_get = (req, res) => {
   }
 
   module.exports.login_get = (req, res) => {
+    res.cookie("jwt", "",{maxAge: 1})
     res.render("login")
   }
 
   module.exports.signup_get = (req, res) => {
+    res.cookie("jwt", "",{maxAge: 1})
     res.render("signup")
+  }
+
+  module.exports.logout_get = (req, res) => {
+    res.cookie("jwt", "",{maxAge: 1})
+    res.redirect("/login")
   }
 
 
   module.exports.local_get = (req, res) => {
-    res.redirect("/login")
+    res.render("login")
   }
 
   module.exports.login_post = async(req, res) => {

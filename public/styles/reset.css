@@ -5,6 +5,7 @@
 
   * {
     margin: 0;
+    padding: 0;
   }
  
   html, body {
@@ -16,6 +17,8 @@
     -webkit-font-smoothing: antialiased;
     background-color: black;
     color: whitesmoke;
+    padding: 1rem;
+
   }
 
   img, picture, video, canvas, svg {
@@ -35,3 +38,29 @@
     isolation: isolate;
   }
 
+.nav-list{
+  display:flex;
+  list-style-type: none;
+  gap: .5rem;
+}
+
+.nav-link{
+  text-decoration: none;
+  color: white;
+}
+
+.nav-username{
+  margin-right: auto;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

@@ -1,0 +1,104 @@
+.game-body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* border: 1px solid rgb(252, 252, 252); */
+    /* box-shadow: 2px 2px 4px 4px red; */
+    gap: 1rem;
+    width: fit-content;
+    margin: auto;
+    padding: 1rem 2.5rem;
+}
+
+.target-number{
+    font-size: 1.5rem;
+}
+
+.display-field-wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.display-field{
+    height: 40px;
+    width: 300px;
+    background-color: whitesmoke;
+    border-bottom-left-radius: 7px;
+    border-top-left-radius: 7px;
+    color: black;
+    padding: .5rem;
+
+}
+
+.delete-btn{
+    padding: .5rem 1.5rem;
+    background-color: rgb(46, 46, 46);
+    color: white;
+    border: 0;
+    cursor: pointer;
+}
+
+.available-numbers{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem
+    }
+
+.available-numbers a{
+    margin: 0 .2rem;
+    padding: .5rem 1.4rem;
+    background-color: rgb(193, 189, 189);
+    display: block;
+    text-decoration: none;
+    color: rgb(64, 64, 64);
+    border-radius: 2px;
+    min-width: 55px;
+
+}
+
+.sm{
+    display: flex;
+}
+
+.math-operations  {
+    display: flex;
+}
+
+a{
+    text-align: center;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+a:hover{
+    transform: scale(1.1);
+}
+
+.math-operations  a{
+    display: block;
+    margin: 0 .2rem;
+    padding: .5rem 1.4rem;
+    background-color: rgb(217, 212, 212);
+    text-decoration: none;
+    color: rgb(64, 64, 64);
+    border-radius: 2px;
+    min-width: 55px;
+}
+
+.confirm-btn{
+    padding: .5rem 1.5rem;
+    border: 0;
+    align-self: stretch;
+    background-color: rgb(100, 64, 232);
+    color: white;
+    cursor: pointer;
+}
+
+.disable-btn{
+    pointer-events: none;
+    opacity: .5;
+}
+
+

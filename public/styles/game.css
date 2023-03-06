@@ -1,0 +1,13 @@
+body{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(-45deg, #fb322e, #ce141d, #8e0003, #340000);
+	background-size: 400% 400%;
+    font-family: Roboto, sans-serif;
+	animation: gradient 25s ease infinite;
+}
+
+h2{
+    font-family: "Gloock";
+    font-weight: 100;
+}
