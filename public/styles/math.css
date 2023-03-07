@@ -1,3 +1,12 @@
+.game-info{
+    display: flex; 
+     margin-bottom: 2rem;
+    /* font-size: 1.5rem; */
+    justify-content: space-between;
+    text-transform: uppercase;
+    color: rgb(62, 33, 90);
+}
+
 .game-body{
     display: flex;
     justify-content: center;

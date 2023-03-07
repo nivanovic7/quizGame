@@ -55,16 +55,9 @@ export const generateTargetNum = function(){
 
 
 export const insertUserInput = function(input){
-//     //cant input operation first
-// if(state.displayedInput.length ===9 0 && !+input) return;
-//     //cant input 2 nums in a row
-// if(state.displayedInput.length === 1 && +input) return;
-    //cant input 2 nums or 2 operations in a row
-
-if(!isNaN(state.displayedInput.at(-1)) && !isNaN(input)) return;
-
-
-state.displayedInput.push(input)
+    //cant input 2 numbers in a row
+    if(!isNaN(state.displayedInput.at(-1)) && !isNaN(input)) return;
+    state.displayedInput.push(input)
 }
 
 

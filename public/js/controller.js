@@ -1,37 +1,39 @@
 import * as model from "./model.js"
 import mathGame from "./views/math.js"
-
+import { countdown } from "./gameLoader.js";
 
 const controlMathGame = function(){
     model.generatePlayingNums();
     model.generateTargetNum();
     mathGame.renderGame(model.state)
+    mathGame.startTimer(controlEndGame);
 }
 
 const controlMathDisplay = function(input){
     model.insertUserInput(input)
     if(model.state.displayedInput.length === 0) return;
-    mathGame.displayNumbers(model.state.displayedInput)
-    mathGame.disableUsedButtons(model.state.displayedInput)
+    mathGame.updateUi(model.state.displayedInput)
 }
 
 const controlDeleteBtn = function(){
     model.deleteUserInput();
-    mathGame.displayNumbers(model.state.displayedInput)
-    mathGame.disableUsedButtons(model.state.displayedInput)
+    mathGame.updateUi(model.state.displayedInput)
 }
 
-const controlConfirmBtn = function(){
+const controlEndGame = function(){
+    mathGame.endGame();
     model.calculateUserResult();
-    mathGame.displayUserResult(model.state.userResult)
+    mathGame.displayUserResult(model.state.userResult);
+    countdown();
+
+    
 }
-
-
 
 const init = function(){
     controlMathGame();
     mathGame.addHandlerDisplay(controlMathDisplay);
     mathGame.addHandlerDelete(controlDeleteBtn)
-    mathGame.addHandlerConfirm(controlConfirmBtn)
+    mathGame.addHandlerEndGame(controlEndGame);
+
 }
 init();

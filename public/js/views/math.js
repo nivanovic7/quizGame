@@ -1,23 +1,41 @@
   class MathGame{
-    _parentElement = document.querySelector(".game-body")
+    _parentElement = document.querySelector(".game-body");
+    TIME_TO_PLAY = 15;
 
     renderGame(data){
         const html = this._generateMarkup(data)
         this._parentElement.innerHTML = html;
-        console.log("RENEDERED")
     }
 
-    displayNumbers(nums){
+    startTimer(handler){
+        const timer = document.querySelector(".time");
+        timer.textContent = this.TIME_TO_PLAY;
+        const countdown  = setInterval(() => {
+            +timer.textContent --;
+            if(!+timer.textContent){
+                clearInterval(countdown);
+                handler();
+            }
+        }, 1000
+        )
+    }
+
+    updateUi(buttonValues){
+        this._displayNumbers(buttonValues);
+        this._disableUsedButtons(buttonValues);
+    }
+
+    _displayNumbers(nums){
         const display = document.querySelector(".display-field");
         display.textContent = ""
         nums.forEach(num => display.textContent += num)
     }
 
-    disableUsedButtons(buttons){
+    _disableUsedButtons(buttonValues){
         const inputsBtns = document.querySelectorAll(".game-body a")
         inputsBtns.forEach(btn => btn.classList.remove("disable-btn"))
 
-        buttons.forEach(btnValue => {
+        buttonValues.forEach(btnValue => {
             //if btn value is math operator skip it
             if(isNaN(btnValue)) return;
            const btn = document.querySelector(`.game-body [data-value="${btnValue}"]`);
@@ -26,25 +44,22 @@
     }    
 
     addHandlerDisplay(handler){
-        const inputsBtns = document.querySelectorAll(".game-body a")
-        inputsBtns.forEach(btn => {
+        const inputBtns = document.querySelectorAll(".game-body a");
+        inputBtns.forEach(btn => {
             btn.addEventListener("click", function(){
-                handler(btn.dataset.value)
+                handler(btn.dataset.value);
             })
         })
     }
 
     addHandlerDelete(handler){
         const deleteBtn = document.querySelector(".delete-btn")
-        deleteBtn.addEventListener("click",handler)
-        console.log("HELlloo")
+        deleteBtn.addEventListener("click", handler);
     }
 
-    addHandlerConfirm(handler){
+    addHandlerEndGame(handler){
        document.querySelector(".confirm-btn").addEventListener("click", function(){
-        document.querySelector(".game-body").style.pointerEvents = "none"
-        document.querySelector(".game-body").style.opacity = ".5"
-        handler()
+        handler();
        })
 
     }
@@ -54,9 +69,20 @@
         document.querySelector(".display-field").textContent = result;
     }
 
+    endGame(){
+        document.querySelector(".game-body").style.pointerEvents = "none";
+        document.querySelector(".game-body").style.opacity = ".5";
+        document.querySelector(".time").style.display = "none"
+    }
+
 
     _generateMarkup(data){
-        return `<div class="target-number">${data.targetNum}</div>
+        return `
+        <div class="game-info">
+            <div>Result: <span class="result">0</span></div>
+            <div>Time: <span class="time">45</span></div>
+        </div>
+        <div class="target-number">${data.targetNum}</div>
         <div class="display-field-wrap">
             <div class="display-field"></div>
             <button class="delete-btn">Izbrisi</button>
