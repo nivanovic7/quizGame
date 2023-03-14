@@ -18,6 +18,8 @@
             }
         }, 1000
         )
+
+        return countdown;
     }
 
     updateUi(buttonValues){
@@ -69,17 +71,23 @@
         document.querySelector(".display-field").textContent = result;
     }
 
-    endGame(){
-        document.querySelector(".game-body").style.pointerEvents = "none";
-        document.querySelector(".game-body").style.opacity = ".5";
-        document.querySelector(".time").style.display = "none"
+    endGame(countdownId){
+        document.querySelector(".game-body").classList.add("disable-game")
+        clearInterval(countdownId);
+        console.log("COundow id " + countdownId)
+        // document.querySelector(".time").style.display = "none"
+    }
+
+    addPoints(points){
+    const result = document.querySelector(".result");
+    result.textContent = +result.textContent + points;
     }
 
 
     _generateMarkup(data){
         return `
         <div class="game-info">
-            <div>Result: <span class="result">0</span></div>
+            <div>Result: <span class="result">${data.points}</span></div>
             <div>Time: <span class="time">45</span></div>
         </div>
         <div class="target-number">${data.targetNum}</div>

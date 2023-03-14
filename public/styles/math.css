@@ -19,6 +19,11 @@
     padding: 1rem 2.5rem;
 }
 
+.disable-game{
+    opacity: .5;
+    pointer-events: none;
+}
+
 .target-number{
     font-size: 1.5rem;
 }
@@ -110,4 +115,86 @@ a:hover{
     opacity: .5;
 }
 
+/*++++++++++++++++++++++ LOGIC GAME  ++++++++++++++++++++++ */
+
+.logic-game-wrap{
+    display: flex;
+    gap: .3rem;
+}
+
+.display-wrap{
+    display: flex;
+    flex-direction: column;
+    gap: .2rem
+}
+
+.input-buttons-wrap{
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+
+.row{
+    display: flex;
+    gap:.5rem;
+    background-color: rgb(64, 25, 25);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.row:nth-child(6){
+    margin-bottom: 1rem;
+}
+
+.row div{
+    width: 40px;    
+    height: 40px;
+    background-color: rgb(194, 188, 188);
+}
+
+.row div:nth-child(4):not(.input-btn){
+    margin-right: 2rem;
+}
+
+.user-input{
+    border-radius: 2px;
+}
+
+.result-field{
+    border-radius: 50%;
+}
+
+.input-btn{
+    background-position: center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.input-btn:hover{
+    scale: 1.1;
+}
+
+.input-btn:nth-child(1){
+    background-image: url("../assets/star.png");
+}
+
+.input-btn:nth-child(2){
+    background-image: url("../assets/heart.png");
+}
+
+.input-btn:nth-child(3){
+    background-image: url("../assets/clubs.png");
+}
+
+.input-btn:nth-child(4){
+    background-image: url("../assets/diamond.png");
+}
+
+.input-btn:nth-child(5){
+    background-image: url("../assets/spades.png");
+}
 

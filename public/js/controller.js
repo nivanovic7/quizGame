@@ -1,39 +1,18 @@
-import * as model from "./model.js"
-import mathGame from "./views/math.js"
-import { countdown } from "./gameLoader.js";
+ import {mathGameInit} from'./mathController.js'
+ import {logicGameInit} from './logicController.js'
+// mathGameInit();
+logicGameInit();
 
-const controlMathGame = function(){
-    model.generatePlayingNums();
-    model.generateTargetNum();
-    mathGame.renderGame(model.state)
-    mathGame.startTimer(controlEndGame);
+export const countdown = function(){
+    setTimeout(function(){
+        const game = document.querySelector(".game-body");
+        game.classList.remove("disable-game")
+        game.innerHTML = ``
+        init();
+    }, 7000)
 }
 
-const controlMathDisplay = function(input){
-    model.insertUserInput(input)
-    if(model.state.displayedInput.length === 0) return;
-    mathGame.updateUi(model.state.displayedInput)
-}
+//1 create game controller which will run other controllers
+//2 make math.js' timer able to be stopped ****
+//3 create logic for main controller file 
 
-const controlDeleteBtn = function(){
-    model.deleteUserInput();
-    mathGame.updateUi(model.state.displayedInput)
-}
-
-const controlEndGame = function(){
-    mathGame.endGame();
-    model.calculateUserResult();
-    mathGame.displayUserResult(model.state.userResult);
-    countdown();
-
-    
-}
-
-const init = function(){
-    controlMathGame();
-    mathGame.addHandlerDisplay(controlMathDisplay);
-    mathGame.addHandlerDelete(controlDeleteBtn)
-    mathGame.addHandlerEndGame(controlEndGame);
-
-}
-init();
