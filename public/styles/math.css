@@ -159,6 +159,9 @@ a:hover{
 
 .user-input{
     border-radius: 2px;
+    background-position: center;
+    background-size: 80%;
+    background-repeat: no-repeat;
 }
 
 .result-field{
