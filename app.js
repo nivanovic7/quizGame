@@ -10,7 +10,7 @@ app.use(express.static("public"));
 app.use(express.json());
 
 mongoose.set("strictQuery", true);
-const dbUri = "mongodb+srv://admin-nikola:128dsuxcngIsvR21@cluster0.7ez59.mongodb.net/QuaestioDB?retryWrites=true&w=majority"
+const dbUri = "mongodb+srv://admin-nikola:zvxFJtg4QnlM4ocZ@cluster0.7ez59.mongodb.net/QuaestioDB"
 mongoose.connect(dbUri)
 .then(() => app.listen(3000))
 .catch(err => console.log(err))

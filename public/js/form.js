@@ -36,9 +36,5 @@ form.addEventListener("submit",async function(e){
     catch(err){
         console.log(err)
     }
-
-
-
-    
 })
 
